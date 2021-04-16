@@ -7,10 +7,10 @@ TextureImporter:
     second: DonutPlains1_DONE_7
   - first:
       213: -7698091877536220419
-    second: DonutPlains1_DONE_1
+    second: CollectibleYoshiCoin
   - first:
       213: -6223913005026926526
-    second: DonutPlains1_DONE_2
+    second: CollectibleCoin
   - first:
       213: -8251548219702976207
     second: DonutPlains1_DONE_3
@@ -22,7 +22,7 @@ TextureImporter:
     second: DonutPlains1_DONE_5
   - first:
       213: 6902963903534496507
-    second: DonutPlains1_DONE_6
+    second: PowerUpBlue
   - first:
       213: -1207279636931453471
     second: DonutPlains1_DONE_7
@@ -34,13 +34,13 @@ TextureImporter:
     second: DonutPlains1_DONE_9
   - first:
       213: -4155499301291857916
-    second: DonutPlains1_DONE_10
+    second: PowerUpRed
   - first:
       213: -6150482773385901676
-    second: DonutPlains1_DONE_11
+    second: CollectibleKey
   - first:
       213: -6400644745172546573
-    second: DonutPlains1_DONE_12
+    second: PowerUpGreen
   - first:
       213: -1617794307008389237
     second: DonutPlains1_DONE_13
@@ -154,7 +154,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_1
+      name: CollectibleYoshiCoin
       rect:
         serializedVersion: 2
         x: 16
@@ -175,7 +175,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_2
+      name: CollectibleCoin
       rect:
         serializedVersion: 2
         x: 61
@@ -259,7 +259,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_6
+      name: PowerUpBlue
       rect:
         serializedVersion: 2
         x: 238
@@ -343,7 +343,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_10
+      name: PowerUpRed
       rect:
         serializedVersion: 2
         x: 238
@@ -364,7 +364,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_11
+      name: CollectibleKey
       rect:
         serializedVersion: 2
         x: 281
@@ -385,7 +385,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: DonutPlains1_DONE_12
+      name: PowerUpGreen
       rect:
         serializedVersion: 2
         x: 238
