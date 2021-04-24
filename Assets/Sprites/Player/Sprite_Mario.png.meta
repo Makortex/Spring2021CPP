@@ -13,13 +13,13 @@ TextureImporter:
     second: MarioWalk2
   - first:
       213: 1554904934580016266
-    second: MarioAttack1
+    second: Sprite_Mario_3
   - first:
       213: -3171580361127328770
-    second: MarioAttack2
+    second: Sprite_Mario_4
   - first:
       213: -7207716073158996441
-    second: MarioAttack3
+    second: Sprite_Mario_5
   - first:
       213: 5693412132100505836
     second: Sprite_Mario_6
@@ -115,7 +115,7 @@ TextureImporter:
     second: Sprite_Mario_36
   - first:
       213: 8706566674536967793
-    second: Sprite_Mario_37
+    second: MarioJumpAttack
   - first:
       213: -3604062871113111416
     second: Sprite_Mario_38
@@ -145,13 +145,13 @@ TextureImporter:
     second: Sprite_Mario_46
   - first:
       213: 3302078408146908689
-    second: Sprite_Mario_47
+    second: MarioAttack1
   - first:
       213: -4040994371160570336
-    second: Sprite_Mario_48
+    second: MarioAttack2
   - first:
       213: 2070263079612885921
-    second: Sprite_Mario_49
+    second: MarioAttack3
   - first:
       213: -5021473000565013323
     second: Sprite_Mario_50
@@ -337,7 +337,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarioAttack1
+      name: Sprite_Mario_3
       rect:
         serializedVersion: 2
         x: 54
@@ -358,7 +358,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarioAttack2
+      name: Sprite_Mario_4
       rect:
         serializedVersion: 2
         x: 71
@@ -379,7 +379,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: MarioAttack3
+      name: Sprite_Mario_5
       rect:
         serializedVersion: 2
         x: 88
@@ -1051,7 +1051,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_37
+      name: MarioJumpAttack
       rect:
         serializedVersion: 2
         x: 320
@@ -1261,7 +1261,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_47
+      name: MarioAttack1
       rect:
         serializedVersion: 2
         x: 61
@@ -1282,7 +1282,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_48
+      name: MarioAttack2
       rect:
         serializedVersion: 2
         x: 79
@@ -1303,7 +1303,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Mario_49
+      name: MarioAttack3
       rect:
         serializedVersion: 2
         x: 97
