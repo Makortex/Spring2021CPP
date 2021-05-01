@@ -17,7 +17,6 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckRadius;
     public bool Attack;
     public bool JAttack;
-     
 
     // Start is called before the first frame update
     void Start()
@@ -76,6 +75,8 @@ public class PlayerMovement : MonoBehaviour
 
         float verticalInput = Input.GetAxisRaw("Vertical");
 
+        
+
         void FloorAttackInput()
         {
             if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -97,7 +98,6 @@ public class PlayerMovement : MonoBehaviour
             if (Input.GetKey(KeyCode.Space) && Input.GetKey("up"))
             {
                 JAttack = true;
-                
             }
             
         }
@@ -115,6 +115,9 @@ public class PlayerMovement : MonoBehaviour
             Attack = false;
             JAttack = false;
         }
+
+
+
         FloorAttackInput();
         FloorAttack();
         JumpAttackInput();
