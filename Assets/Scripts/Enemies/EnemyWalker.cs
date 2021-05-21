@@ -54,6 +54,7 @@ public class EnemyWalker : MonoBehaviour
             sr.flipX = !sr.flipX;
         }
     }
+
     public void IsDead()
     {
         health--;
@@ -63,11 +64,13 @@ public class EnemyWalker : MonoBehaviour
             rb.velocity = Vector2.zero;
         }
     }
+
     public void IsSquished()
     {
         anim.SetBool("Squish", true);
         rb.velocity = Vector2.zero;
     }
+
     public void FinishDeath()
     {
         Destroy(gameObject.transform.parent.gameObject);
