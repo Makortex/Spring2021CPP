@@ -17,16 +17,22 @@ public class Projectile : MonoBehaviour
         }
 
 
-        GetComponent<Rigidbody2D>().velocity = new Vector2(Mathf.Abs(speed), 0);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(speed, 0);
         Destroy(gameObject, lifetime);
     }
 
-    private void OnCollisionEnter2D(Collision2D other)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        
-        //if (Collider2D.CompareTag("Player"))
-        //{
-        Destroy(gameObject);
-        //}
+        if (collision.gameObject.tag == "Enemy")
+        {
+            collision.gameObject.GetComponent<EnemyWalker>().IsDead();
+            Destroy(gameObject);
+        }
+
+        if (collision.gameObject.tag != "Player" && collision.gameObject.tag != "Pickup")
+        {
+            Destroy(gameObject);
+        }
     }
+   
 }

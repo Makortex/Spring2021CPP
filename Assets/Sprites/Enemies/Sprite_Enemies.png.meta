@@ -433,13 +433,13 @@ TextureImporter:
     second: Sprite_Enemies_142
   - first:
       213: 3807614056348107641
-    second: ETurretDryBonesAttack3
+    second: EnemyTurretAttack3
   - first:
       213: -1740429026203042360
-    second: ETurretDryBonesAttack4
+    second: EnemyTurretAttack4
   - first:
       213: -962376979639631369
-    second: ProjectileBone1
+    second: EnemyBone1
   - first:
       213: 7158321006987732722
     second: Sprite_Enemies_149
@@ -493,19 +493,19 @@ TextureImporter:
     second: Sprite_Enemies_165
   - first:
       213: -2904214472429962897
-    second: ETurretDryBonesIdle
+    second: EnemyTurretIdle
   - first:
       213: 7968062929585594320
-    second: ETurretDryBonesDeath1
+    second: EnemyTurretDeath1
   - first:
       213: -3172523602754193250
-    second: ETurretDryBonesAttack1
+    second: EnemyTurretAttack1
   - first:
       213: -3057130212143786841
-    second: ETurretDryBonesAttack2
+    second: EnemyTurretAttack2
   - first:
       213: -8872064651309426055
-    second: ProjectileBone2
+    second: EnemyBone2
   - first:
       213: -466606416574825804
     second: Sprite_Enemies_172
@@ -538,7 +538,7 @@ TextureImporter:
     second: Sprite_Enemies_181
   - first:
       213: 6630277843065385250
-    second: ETurretDrybonesDeath2
+    second: EnemyTurretDeath2
   - first:
       213: -9077021016777014844
     second: Sprite_Enemies_183
@@ -637,7 +637,7 @@ TextureImporter:
     second: Sprite_Enemies_218
   - first:
       213: 1688739287363906393
-    second: Sprite_Enemies_219
+    second: EnemyBuzzyBettleSquish
   - first:
       213: 4578007720435654037
     second: Sprite_Enemies_220
@@ -5131,7 +5131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ETurretDryBonesAttack3
+      name: EnemyTurretAttack3
       rect:
         serializedVersion: 2
         x: 336
@@ -5152,7 +5152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ETurretDryBonesAttack4
+      name: EnemyTurretAttack4
       rect:
         serializedVersion: 2
         x: 358
@@ -5173,7 +5173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileBone1
+      name: EnemyBone1
       rect:
         serializedVersion: 2
         x: 387
@@ -5551,7 +5551,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ETurretDryBonesIdle
+      name: EnemyTurretIdle
       rect:
         serializedVersion: 2
         x: 201
@@ -5572,7 +5572,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ETurretDryBonesDeath1
+      name: EnemyTurretDeath1
       rect:
         serializedVersion: 2
         x: 257
@@ -5593,7 +5593,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ETurretDryBonesAttack1
+      name: EnemyTurretAttack1
       rect:
         serializedVersion: 2
         x: 283
@@ -5614,7 +5614,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ETurretDryBonesAttack2
+      name: EnemyTurretAttack2
       rect:
         serializedVersion: 2
         x: 310
@@ -5635,7 +5635,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ProjectileBone2
+      name: EnemyBone2
       rect:
         serializedVersion: 2
         x: 388
@@ -5866,7 +5866,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: ETurretDrybonesDeath2
+      name: EnemyTurretDeath2
       rect:
         serializedVersion: 2
         x: 230
@@ -6559,7 +6559,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sprite_Enemies_219
+      name: EnemyBuzzyBettleSquish
       rect:
         serializedVersion: 2
         x: 619

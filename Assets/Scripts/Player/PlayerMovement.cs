@@ -18,6 +18,9 @@ public class PlayerMovement : MonoBehaviour
     public bool Attack;
     public bool JAttack;
 
+    public int score = 0;
+    public int lives = 3;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
     }
-    
+
     void FixedUpdate()
     {
 
@@ -75,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
 
         float verticalInput = Input.GetAxisRaw("Vertical");
 
-        
+
 
         void FloorAttackInput()
         {
@@ -99,9 +102,9 @@ public class PlayerMovement : MonoBehaviour
             {
                 JAttack = true;
             }
-            
+
         }
-        
+
         void JumpAttack()
         {
             if (JAttack)
@@ -109,14 +112,12 @@ public class PlayerMovement : MonoBehaviour
                 anim.SetTrigger("JAttack");
             }
         }
-        
+
         void ResetValues()
         {
             Attack = false;
             JAttack = false;
         }
-
-
 
         FloorAttackInput();
         FloorAttack();
@@ -124,4 +125,49 @@ public class PlayerMovement : MonoBehaviour
         JumpAttack();
         ResetValues();
     }
+
+    //public void StartJumpForceChange()
+    //{
+    //    StartCoroutine(JumpForceChange());
+    //}
+
+    //ienumerator jumpforcechange()
+    //{
+    //    jumpforce = 600;
+    //    yield return new waitforseconds(10.0f);
+    //    jumpforce = 300;
+    //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Squish")
+        {
+            if (!isGrounded)
+            {
+                collision.gameObject.GetComponentInParent<EnemyWalker>().IsSquished();
+                rb.velocity = Vector2.zero;
+                rb.AddForce(Vector2.up * 100);
+            }
+        }
+
+        if (collision.gameObject.tag == "LeftRange")
+        {
+            collision.gameObject.GetComponentInParent<EnemyTurret>().LRange();
+            collision.gameObject.GetComponentInParent<EnemyTurret>().IsInRange();
+        }
+        if (collision.gameObject.tag == "RightRange")
+        {
+            collision.gameObject.GetComponentInParent<EnemyTurret>().RRange();
+            collision.gameObject.GetComponentInParent<EnemyTurret>().IsInRange();
+        }
+        if (collision.gameObject.tag == "OORR")
+        {
+            collision.gameObject.GetComponentInParent<EnemyTurret>().OOR();
+        }
+        if (collision.gameObject.tag == "OORL")
+        {
+            collision.gameObject.GetComponentInParent<EnemyTurret>().OOR();
+        }
+    }
 }
+
