@@ -21,7 +21,7 @@ public class CameraFollow : MonoBehaviour
         if (player)
         {
             Vector3 cameraTransform;
-
+            
             cameraTransform = transform.position;
 
             cameraTransform.x = player.transform.position.x - 0.5f;

@@ -134,4 +134,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("You died, press Esc key to go to Title Screen");
         }
     }
+    public void StartGame()
+    {
+        SceneManager.LoadScene("SampleScene");
+    }
+
+    public void ReturnToMenu()
+    {
+        SceneManager.LoadScene("TitleScreen");
+    }
 }
