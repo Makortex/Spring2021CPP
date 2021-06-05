@@ -74,5 +74,7 @@ public class EnemyWalker : MonoBehaviour
     public void FinishDeath()
     {
         Destroy(gameObject.transform.parent.gameObject);
+        GameManager.instance.lives++;
+
     }
 }

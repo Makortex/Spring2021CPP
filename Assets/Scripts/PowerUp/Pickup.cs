@@ -11,27 +11,29 @@ public class Pickup : MonoBehaviour
         LIVES
     }
 
-    //void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    //GetComponent<Collider2D>();
-    //    //if (collision.gameObject.tag == "Player")
-    //    //{
-    //    //    Destroy(gameObject);
-    //    //    switch (currentCollectible)
-    //    //    {
-    //    //        case CollectibleType.COLLECTIBLE:
-    //    //            PlayerMovement pmScript = collision.gameObject.GetComponent<PlayerMovement>();
-    //    //            pmScript.score++;
-    //    //            break;
-    //    //        case CollectibleType.POWERUP:
-    //    //            break;
-    //    //        case CollectibleType.LIVES:
-    //    //            pmScript = collision.gameObject.GetComponent<PlayerMovement>();
-    //    //            pmScript.lives++;
-    //    //            break;
-    //    //    }
+    public CollectibleType currentCollectible;
 
-    //        Destroy(gameObject);
-    //    }
-    //}
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        GetComponent<Collider2D>();
+        if (collision.gameObject.tag == "Player")
+        {
+            Destroy(gameObject);
+            switch (currentCollectible)
+            {
+                case CollectibleType.COLLECTIBLE:
+                    //PlayerMovement pmScript = collision.gameObject.GetComponent<PlayerMovement>();
+                    GameManager.instance.score++;
+                    break;
+                case CollectibleType.POWERUP:
+                    break;
+                case CollectibleType.LIVES:
+                    //pmScript = collision.gameObject.GetComponent<PlayerMovement>();
+                    GameManager.instance.lives++;
+                    break;
+            }
+
+            Destroy(gameObject);
+    }
+}
 }

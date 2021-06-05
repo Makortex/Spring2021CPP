@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
+    public GameObject[] hearts;
+
     static GameManager _instance = null;
 
     public static GameManager instance
@@ -15,25 +17,31 @@ public class GameManager : MonoBehaviour
     }
 
     public int maxLives = 3;
-
     int _score = 0;
+
     public int score
     {
         get { return _score; }
         set
         {
+            currentCanvas = FindObjectOfType<CanvasManager>();
+
             _score = value;
             Debug.Log("Current Score Is: " + _score);
+            currentCanvas.SetScoreText();
+
         }
     }
 
-
     int _lives;
+
     public int lives
     {
         get { return _lives; }
         set
         {
+            currentCanvas = FindObjectOfType<CanvasManager>();
+
             if (_lives > value)
             {
                 Respawn();
@@ -44,18 +52,23 @@ public class GameManager : MonoBehaviour
             {
                 _lives = maxLives;
             }
-            else if (_lives <= 0)
+            else if (_lives < 0)
             {
-                GameOver();
+                SceneManager.LoadScene("GameOver");
             }
 
             Debug.Log("Current Lives Are: " + _lives);
+            currentCanvas.SetLivesText();
+            currentCanvas.SetScoreText();
+
         }
     }
 
     public GameObject playerInstance;
     public GameObject playerPrefab;
     public LevelManager currentLevel;
+
+    CanvasManager currentCanvas;
 
     // Start is called before the first frame update
     void Start()
@@ -69,11 +82,30 @@ public class GameManager : MonoBehaviour
             instance = this;
             DontDestroyOnLoad(this);
         }
+        currentCanvas = FindObjectOfType<CanvasManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_lives ==0)
+        {
+            Destroy(hearts[0].gameObject);
+        }
+        else if (_lives == 1)
+        {            
+            Destroy(hearts[1].gameObject);
+        }
+        else if (_lives == 2)
+        {
+            Destroy(hearts[2].gameObject);
+        }
+        //else if (_lives == 3)
+        //{
+        //    Instantiate(hearts[0], transform.position, transform.rotation);
+        //    Instantiate(hearts[1], transform.position, transform.rotation);
+        //    Instantiate(hearts[2], transform.position, transform.rotation);
+        //}
         if (Input.GetKeyDown(KeyCode.Escape))
         {
             if (SceneManager.GetActiveScene().name == "SampleScene")
@@ -89,7 +121,6 @@ public class GameManager : MonoBehaviour
             {
                 SceneManager.LoadScene("TitleScreen");
                 Debug.Log("Press Esc key to start the game");
-
             }
         }
 
@@ -137,6 +168,8 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         SceneManager.LoadScene("SampleScene");
+        Time.timeScale = 1;
+        _score = 0;
     }
 
     public void ReturnToMenu()

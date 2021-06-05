@@ -40,7 +40,7 @@ public class EnemyTurret : MonoBehaviour
 
         if (health <= 0)
         {
-            health = 5;
+            health = 2;
         }
     }
 
@@ -82,6 +82,7 @@ public class EnemyTurret : MonoBehaviour
             if(health<=0)
             {
                 Destroy(gameObject);
+                GameManager.instance.score++;
             }
         }
     }

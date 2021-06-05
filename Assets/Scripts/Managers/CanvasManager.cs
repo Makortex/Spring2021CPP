@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class CanvasManager : MonoBehaviour
 {
+
     [Header("Buttons")]
     public Button startButton;
     public Button quitButton;
@@ -20,6 +21,8 @@ public class CanvasManager : MonoBehaviour
 
     [Header("Text")]
     public Text livesText;
+    public Text scoreText;
+
     public Text volSliderText;
 
     [Header("Slider")]
@@ -62,12 +65,20 @@ public class CanvasManager : MonoBehaviour
         {
             SetLivesText();
         }
+
+        if (scoreText)
+        {
+            SetScoreText();
+
+        }
     }
 
     void ShowMainMenu()
     {
         settingsMenu.SetActive(false);
         mainMenu.SetActive(true);
+        Time.timeScale = 1;
+
     }
 
     public void SetLivesText()
@@ -81,6 +92,17 @@ public class CanvasManager : MonoBehaviour
             SetLivesText();
         }
     }
+    public void SetScoreText()
+    {
+        if (GameManager.instance)
+        {
+            scoreText.text = GameManager.instance.score.ToString();
+        }
+        else
+        {
+            SetScoreText();
+        }
+    }
 
     void ShowSettingsMenu()
     {
@@ -91,6 +113,7 @@ public class CanvasManager : MonoBehaviour
     void ReturnToGame()
     {
         pauseMenu.SetActive(false);
+        Time.timeScale = 1;
     }
 
     private void Update()
@@ -103,17 +126,22 @@ public class CanvasManager : MonoBehaviour
 
                 if (pauseMenu.activeSelf)
                 {
-                    //HINT - THIS IS WHERE ONE PART OF THE LAB GOES!
+                    Time.timeScale = 0;
+                }
+                else
+                {
+                    Time.timeScale = 1;
                 }
             }
         }
+        
 
-        //if (settingsMenu)
-        //{
-        //    if (settingsMenu.activeSelf)
-        //    {
-        //        volSliderText.text = volSlider.value.ToString();
-        //    }
-        //}
+        if (settingsMenu)
+        {
+            if (settingsMenu.activeSelf)
+            {
+                volSliderText.text = volSlider.value.ToString();
+            }
+        }
     }
 }
