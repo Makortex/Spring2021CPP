@@ -98,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentCollectible: 1
+  pickupAudioClip: {fileID: 8300000, guid: add58f0e52765a94d8b297957cb30688, type: 3}
 --- !u!61 &572158975
 BoxCollider2D:
   m_ObjectHideFlags: 0

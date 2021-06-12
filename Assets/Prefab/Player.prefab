@@ -250,8 +250,8 @@ MonoBehaviour:
   groundCheckRadius: 0.01
   Attack: 0
   JAttack: 0
-  score: 0
-  lives: 3
+  jumpSFX: {fileID: 8300000, guid: 2608ccdf33d7d9a4887234c0d522a050, type: 3}
+  audioMixer: {fileID: -1220473455958397720, guid: 1d81348bda422a043ae41055afc4ba5a, type: 2}
 --- !u!95 &4213180745493686092
 Animator:
   serializedVersion: 3

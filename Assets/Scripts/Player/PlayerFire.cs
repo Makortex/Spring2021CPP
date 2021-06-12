@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 [RequireComponent(typeof(PlayerMovement))]
 public class PlayerFire : MonoBehaviour
@@ -13,7 +14,10 @@ public class PlayerFire : MonoBehaviour
 
     public float projectileSpeed;
     public Projectile projectilePrefab;
-    
+
+    //AudioSource fireAudioSource;
+    //public AudioClip fireSFX;
+    //public AudioMixerGroup audioMixer;
 
     //public bool Attack;
 
@@ -22,7 +26,8 @@ public class PlayerFire : MonoBehaviour
     {
         marioSprite = GetComponent<SpriteRenderer>();
         anim = GetComponent<Animator>();
-        
+        //fireAudioSource = GetComponent<AudioSource>();
+
 
         if (projectileSpeed <= 0)
         {
@@ -43,7 +48,16 @@ public class PlayerFire : MonoBehaviour
 
     void FireProjectile()
     {
-        
+        //if (!fireAudioSource)
+        //{
+        //    fireAudioSource = gameObject.AddComponent<AudioSource>();
+        //    fireAudioSource.clip = fireSFX;
+        //    fireAudioSource.outputAudioMixerGroup = audioMixer;
+        //    fireAudioSource.loop = false;
+        //}
+
+        //fireAudioSource.Play();
+
         if (marioSprite.flipX)
         {
             Projectile projectileInstance = Instantiate(projectilePrefab, spawnPointLeft.position, spawnPointLeft.rotation);
@@ -55,7 +69,7 @@ public class PlayerFire : MonoBehaviour
             Projectile projectileInstance = Instantiate(projectilePrefab, spawnPointRight.position, spawnPointRight.rotation);
             projectileInstance.speed = projectileSpeed;
         }
-        
+
     }
 
 

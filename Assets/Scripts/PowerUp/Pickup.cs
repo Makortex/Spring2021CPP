@@ -12,13 +12,18 @@ public class Pickup : MonoBehaviour
     }
 
     public CollectibleType currentCollectible;
+    public AudioClip pickupAudioClip;
 
+    private void Start()
+    {
+        
+    }
     void OnTriggerEnter2D(Collider2D collision)
     {
         GetComponent<Collider2D>();
         if (collision.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
+            PlayerMovement curMovementScript = collision.GetComponent<PlayerMovement>();
             switch (currentCollectible)
             {
                 case CollectibleType.COLLECTIBLE:
@@ -33,7 +38,10 @@ public class Pickup : MonoBehaviour
                     break;
             }
 
+            if (pickupAudioClip && curMovementScript)
+                curMovementScript.CollectibleSound(pickupAudioClip);
+
             Destroy(gameObject);
-    }
+        }
 }
 }

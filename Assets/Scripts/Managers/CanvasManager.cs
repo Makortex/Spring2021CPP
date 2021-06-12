@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Audio;
 
 public class CanvasManager : MonoBehaviour
 {
@@ -27,6 +28,11 @@ public class CanvasManager : MonoBehaviour
 
     [Header("Slider")]
     public Slider volSlider;
+
+    [Header("Audio")]
+    AudioSource pauseSoundAudio;
+    public AudioClip pauseSound;
+    public AudioMixerGroup soundFXMixer;
 
     // Start is called before the first frame update
     void Start()
@@ -124,9 +130,14 @@ public class CanvasManager : MonoBehaviour
             {
                 pauseMenu.SetActive(!pauseMenu.activeSelf);
 
+                if(!pauseSoundAudio)
+                {
+                    pauseSoundAudio = gameObject.AddComponent<AudioSource>();
+                }
                 if (pauseMenu.activeSelf)
                 {
                     Time.timeScale = 0;
+                    pauseSoundAudio.Play();
                 }
                 else
                 {
